@@ -23,3 +23,15 @@ yarn-error.log*
 
 # Editor folders
 .vscode/
+
+# Backend-specific ignores (moved from backend/.gitignore)
+backend/.env
+backend/.env.local
+backend/.env.production
+backend/node_modules/
+backend/logs/
+backend/*.log
+backend/temp/
+backend/tmp/
+backend/dist/
+backend/build/
