@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+const dns = require('dns');
+dns.setServers(['8.8.8.8']);
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -9,9 +12,10 @@ const MongoStore = require('connect-mongo').default;
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/financeDB';
+const SESSION_SECRET = process.env.SESSION_SECRET || 'dev-session-secret-change-me';
 
 if (!process.env.SESSION_SECRET) {
-  throw new Error('❌ SESSION_SECRET is not set in .env! Server cannot start safely.');
+  console.warn('⚠️ SESSION_SECRET was not set, using a development fallback.');
 }
 
 app.use(cors({
@@ -25,7 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({

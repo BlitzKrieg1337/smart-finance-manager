@@ -1,10 +1,14 @@
-Flask==3.0.0
-Flask-SQLAlchemy==3.1.1
-Flask-CORS==4.0.0
-pandas==2.1.4
-requests==2.31.0
-yfinance==0.2.33
-scikit-learn==1.3.2
-numpy==1.26.2
-Werkzeug==3.0.1
-python-dotenv==1.0.0
+# Node/npm dependency summary for this project
+# Backend dependencies (see backend/package.json for exact versions):
+# axios, bcrypt, bcryptjs, connect-mongo, cors, dotenv, express,
+# express-session, jsonwebtoken, lodash, mongodb, mongoose, node-fetch
+#
+# Frontend dependencies (see frontend/package.json for exact versions):
+# react, react-dom, react-router-dom, recharts, axios, canvas-confetti, lucide-react
+#
+# To install, run inside each folder:
+#   cd backend && npm install
+#   cd frontend && npm install
+#
+# Note: This repository does not use Python for the backend. If you need
+# Python tooling, create a separate requirements-python.txt and document its purpose.
